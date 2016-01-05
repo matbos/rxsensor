@@ -26,14 +26,12 @@ public class SensorObservable implements SensorEventListener {
         eventDataObservable = subject.asObservable()
                                      .doOnSubscribe(() -> {
                                          Log.d("GATT_SUB", "Subscribing for sensor updates");
-                                         sensorManager.registerListener(this, sensorManager.getDefaultSensor(type),
-                                                                        samplingPeriod);
+                                         sensorManager.registerListener(this, sensorManager.getDefaultSensor(type), samplingPeriod);
                                      })
 
                                      .doOnUnsubscribe(() -> {
                                          Log.d("GATT_SUB_UN", "Unsubscribed from sensor updates");
-                                         sensorManager.unregisterListener
-                                                 (this);
+                                         sensorManager.unregisterListener(this);
                                      })
                                      .share();
     }
