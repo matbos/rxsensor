@@ -8,7 +8,7 @@ import pl.matbos.rxsensor.data.EventData;
 import rx.Observable;
 
 /**
- * Provides mean to retrieve observables for required sensor.
+ * Provides means of retrieving observables for required sensor.
  *
  * @author Mateusz Boś
  */
